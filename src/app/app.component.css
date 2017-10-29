@@ -1,0 +1,21 @@
+.top-bar{
+    background:#043591;
+}
+.top-bar-left{
+    color:white;
+}
+.top-bar-right{
+    color: white;
+}
+.menu{
+    background:#043591;
+    overflow: hidden;
+    color: white;  
+}
+a{
+    color: white;
+}
+.callout{
+    width: 80%;
+    margin-left: 100px;
+}

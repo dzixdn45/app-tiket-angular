@@ -1,0 +1,52 @@
+<div *ngIf="isForm">
+  <form [formGroup]="rForm" (ngSubmit)="addPost(rForm.value)">
+    <div class="form-container">
+      <div class="row columns">
+        <h1>Form Customer</h1>
+        <label> Customer Name
+          <input type="text" formControlName="customerName">
+        </label>
+        <div class="alert" *ngIf="!rForm.controls['customerName'].valid && rForm.controls['customerName'].touched">{{
+          titleAlert }}
+        </div>
+        <label> Customer Email
+          <input type="text" formControlName="customerEmail">
+        </label>
+        <div class="alert" *ngIf="!rForm.controls['customerEmail'].valid && rForm.controls['customerEmail'].touched">
+          Please Input Email
+        </div>
+        <label> Identity Number
+          <input type="text" formControlName="identityNumber">
+        </label>
+        <div class="alert" *ngIf="!rForm.controls['identityNumber'].valid && rForm.controls['identityNumber'].touched">
+          Please Input Only Number
+        </div>
+        <label> Customer Phone Number
+          <input type="text" formControlName="customerPhoneNumber">
+        </label>
+        <div class="alert"
+             *ngIf="!rForm.controls['customerPhoneNumber'].valid && rForm.controls['customerPhoneNumber'].touched">
+          Please Input Only Number
+        </div>
+        <input type="submit" class="button expanded" value="Submit Form" [disabled]="!rForm.valid">
+      </div>
+    </div>
+  </form>
+</div>
+
+<div *ngIf="isTable">
+  <table>
+    <tr>
+      <th>Customer Name</th>
+      <th>Customer Email</th>
+      <th>Identity Number</th>
+      <th>Phone Number</th>
+    </tr>
+    <tr>
+      <td>SMK BI</td>
+      <td>smkbi@bi.com</td>
+      <td>3456789</td>
+      <td>1234567</td>
+    </tr>
+  </table>
+</div>

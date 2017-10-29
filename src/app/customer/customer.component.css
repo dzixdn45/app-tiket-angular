@@ -1,0 +1,17 @@
+table {
+    width: 100%;
+
+  }
+  
+  th {
+    background-color: #4CAF50;
+    color: white;
+  }
+  
+  td {
+    background-color: white;
+    color: black;
+  }
+  .form-container{
+    margin-top: 50px;
+  }

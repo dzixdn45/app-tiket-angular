@@ -1,0 +1,47 @@
+<div *ngIf="isForm">
+    <form [formGroup]="jForm" (ngSubmit)="addPost(jForm.value)">
+      <div class="form-container">
+        <div class="row columns">
+          <h1>Form rails</h1>
+          <label> rails id
+              <input type="text" formControlName="railsId">
+            </label>
+            <div class="alert"
+                 *ngIf="!jForm.controls['railsId'].valid && jForm.controls['railsId'].touched">
+              Please Input Only Number
+            </div>
+          <label> Rails Name
+            <input type="text" formControlName="customerName">
+          </label>
+          <div class="alert" *ngIf="!jForm.controls['railsName'].valid && jForm.controls['railsName'].touched">{{
+            titleAlert }}
+          </div>
+          <label> Capacity rails
+            <input type="text" formControlName="railsCapacity">
+          </label>
+          <div class="alert" *ngIf="!jForm.controls['railsCapacity'].valid && jForm.controls['railsCapacity'].touched">
+            Please Input Only Number
+          </div>
+          <input type="submit" class="button expanded" value="Submit Form" [disabled]="!rForm.valid">
+        </div>
+      </div>
+    </form>
+  </div>
+  
+  <div *ngIf="isTable">
+    <table>
+      <tr>
+        <th>Customer Name</th>
+        <th>Customer Email</th>
+        <th>Identity Number</th>
+        <th>Phone Number</th>
+      </tr>
+      <tr>
+        <td>SMK BI</td>
+        <td>smkbi@bi.com</td>
+        <td>3456789</td>
+        <td>1234567</td>
+      </tr>
+    </table>
+  </div>
+  
