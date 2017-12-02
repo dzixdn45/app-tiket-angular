@@ -1,4 +1,4 @@
-export class Customer{
+interface CustomerResponse {
     customerId: number;
     name: string;
     customerEmail: string;

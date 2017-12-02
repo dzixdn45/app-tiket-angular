@@ -4,9 +4,9 @@
       <div class="row columns">
         <h1>Form Customer</h1>
         <label> Customer Name
-          <input type="text" formControlName="customerName">
+          <input type="text" formControlName="name">
         </label>
-        <div class="alert" *ngIf="!rForm.controls['customerName'].valid && rForm.controls['customerName'].touched">{{
+        <div class="alert" *ngIf="!rForm.controls['name'].valid && rForm.controls['name'].touched">{{
           titleAlert }}
         </div>
         <label> Customer Email
@@ -16,18 +16,19 @@
           Please Input Email
         </div>
         <label> Identity Number
-          <input type="text" formControlName="identityNumber">
+          <input type="text" formControlName="identifyNumber">
         </label>
-        <div class="alert" *ngIf="!rForm.controls['identityNumber'].valid && rForm.controls['identityNumber'].touched">
+        <div class="alert" *ngIf="!rForm.controls['identifyNumber'].valid && rForm.controls['identifyNumber'].touched">
           Please Input Only Number
         </div>
         <label> Customer Phone Number
-          <input type="text" formControlName="customerPhoneNumber">
+          <input type="text" formControlName="costumerPhone">
         </label>
         <div class="alert"
-             *ngIf="!rForm.controls['customerPhoneNumber'].valid && rForm.controls['customerPhoneNumber'].touched">
+             *ngIf="!rForm.controls['costumerPhone'].valid && rForm.controls['costumerPhone'].touched">
           Please Input Only Number
         </div>
+        <input type="hidden" formControlName="customerId">
         <input type="submit" class="button expanded" value="Submit Form" [disabled]="!rForm.valid">
       </div>
     </div>
@@ -41,12 +42,19 @@
       <th>Customer Email</th>
       <th>Identity Number</th>
       <th>Phone Number</th>
+      <th></th>
     </tr>
-    <tr>
-      <td>SMK BI</td>
-      <td>smkbi@bi.com</td>
-      <td>3456789</td>
-      <td>1234567</td>
+    <tr *ngFor="let d of customerResponse">
+      <td>{{d.name}}</td>
+      <td>{{d.customerEmail}}</td>
+      <td>{{d.identifyNumber}}</td>
+      <td>{{d.costumerPhone}}</td>
+      <td>
+        <input type="button" value="Update customer" (click)='update(d)'>
+        <input type="button" value="Delete customer" (click)='deleteCustomer(d)'>
+
+      </td>
     </tr>
   </table>
+  <input type="button" value="Add customer" (click)="showForm()">
 </div>
